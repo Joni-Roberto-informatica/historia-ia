@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inteligência Artificial - História e Aplicações</title>
+<style>
+:root{--azul:#0a192f;--ciano:#00d4ff;--branco:#e6f1ff;--card:#112240}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{background:var(--azul);color:var(--branco);line-height:1.7}
+header{background:linear-gradient(135deg,#0a192f,#112240);padding:60px 20px;text-align:center;border-bottom:2px solid var(--ciano)}
+header h1{font-size:2.8em;color:var(--ciano)} header p{max-width:700px;margin:15px auto;opacity:.9}
+nav{position:sticky;top:0;background:#0a192fbb;backdrop-filter:blur(10px);display:flex;justify-content:center;gap:15px;padding:12px;z-index:10;border-bottom:1px solid #233554}
+nav button{background:transparent;border:1px solid var(--ciano);color:var(--ciano);padding:8px 16px;border-radius:20px;cursor:pointer;transition:.3s}
+nav button:hover,nav button.active{background:var(--ciano);color:var(--azul)}
+section{max-width:1100px;margin:40px auto;padding:0 20px}
+.card{background:var(--card);border-radius:16px;padding:25px;margin:20px 0;border-left:4px solid var(--ciano);box-shadow:0 10px 30px #0000004d;transition:.3s}
+.card:hover{transform:translateY(-5px)}
+.timeline{position:relative;padding-left:30px;border-left:2px solid var(--ciano)}
+.timeline.item{margin:25px 0;position:relative}
+.timeline.item::before{content:'';position:absolute;left:-38px;top:5px;width:14px;height:14px;background:var(--ciano);border-radius:50%}
+.timeline h4{color:var(--ciano)}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{padding:12px;border:1px solid #233554;text-align:left}
+th{background:#233554;color:var(--ciano)}
+.app-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.app-grid.card{text-align:center;border-left:none;border-top:4px solid var(--ciano)}
+.app-grid span{font-size:2.5em}
+footer{text-align:center;padding:30px;opacity:.6;border-top:1px solid #233554;margin-top:40px}
+#quiz{margin-top:20px}
+#quiz button{display:block;width:100%;margin:8px 0;padding:10px;background:#233554;border:none;color:white;border-radius:8px;cursor:pointer}
+#quiz button:hover{background:var(--ciano);color:var(--azul)}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🤖 Inteligência Artificial</h1>
+<p>Do sonho de criar máquinas pensantes à revolução que transforma Educação, Saúde, Indústria e Agricultura</p>
+<button onclick="document.getElementById('hist').scrollIntoView({behavior:'smooth'})" style="margin-top:15px;padding:10px 20px;border-radius:25px;border:none;background:var(--ciano);color:var(--azul);cursor:pointer;font-weight:bold">Explorar História</button>
+</header>
+
+<nav>
+<button class="active" onclick="showSec('hist')">História</button>
+<button onclick="showSec('compar')">Tradicional vs Moderna</button>
+<button onclick="showSec('aplic')">Aplicações</button>
+<button onclick="showSec('quizsec')">Quiz</button>
+</nav>
+
+<section id="hist">
+<h2>📜 Histórico de Surgimento da IA</h2>
+<div class="card"><p>A ideia de máquinas inteligentes vem desde a antiguidade (mitos gregos), mas a IA como ciência nasceu em <b>1956</b> na Conferência de Dartmouth, onde John McCarthy cunhou o termo "Artificial Intelligence".</p></div>
+<div class="timeline">
+<div class="item"><h4>1943 - Neurónio Artificial</h4><p>McCulloch e Pitts criam primeiro modelo matemático de rede neural.</p></div>
+<div class="item"><h4>1950 - Teste de Turing</h4><p>Alan Turing propõe teste para saber se máquina pode pensar.</p></div>
+<div class="item"><h4>1956 - Nascimento Oficial</h4><p>Conferência de Dartmouth - John McCarthy, Marvin Minsky fundam a área.</p></div>
+<div class="item"><h4>1966 - ELIZA</h4><p>Primeiro chatbot que simulava psicólogo.</p></div>
+<div class="item"><h4>1997 - Deep Blue vence Kasparov</h4><p>Computador da IBM vence campeão mundial de xadrez.</p></div>
+<div class="item"><h4>2012 - Revolução Deep Learning</h4><p>AlexNet vence competição de visão computacional. Começa era moderna.</p></div>
+<div class="item"><h4>2022-2024 - IA Generativa</h4><p>ChatGPT, Gemini, Muse levam IA para bilhões de pessoas.</p></div>
+</div>
+</section>
+
+<section id="compar" style="display:none">
+<h2>⚖️ IA Tradicional vs IA Moderna</h2>
+<div class="card">
+<table>
+<tr><th>Aspecto</th><th>IA Tradicional (GOFAI)</th><th>IA Moderna (Deep Learning)</th></tr>
+<tr><td><b>Base</b></td><td>Regras escritas por humanos (Se-Então)</td><td>Aprende com dados, redes neurais</td></tr>
+<tr><td><b>Exemplo</b></td><td>Sistemas especialistas, xadrez antigo</td><td>ChatGPT, reconhecimento facial</td></tr>
+<tr><td><b>Dados</b></td><td>Poucos dados</td><td>Milhões de exemplos</td></tr>
+<tr><td><b>Flexibilidade</b></td><td>Rígida, quebra se regra muda</td><td>Adaptável, generaliza</td></tr>
+<tr><td><b>Explicação</b></td><td>Fácil explicar porquê</td><td>"Caixa preta" difícil explicar</td></tr>
+</table>
+</div>
+<div class="card" id="comparCard">
+<h3 id="comparTitle">Clique para ver diferença na prática:</h3>
+<button onclick="trocarExemplo()" style="padding:8px 15px;background:var(--ciano);border:none;border-radius:8px;cursor:pointer;margin-top:10px">Ver Exemplo</button>
+<p id="comparTexto" style="margin-top:15px"></p>
+</div>
+</section>
+
+<section id="aplic" style="display:none">
+<h2>🚀 Aplicações da IA no Mundo Real</h2>
+<div class="app-grid">
+<div class="card"><span>📚</span><h3>Educação</h3><p>Plataformas adaptativas (Khan Academy), correção automática, tutores virtuais 24h, personalização de aulas para cada aluno de Mossurize.</p></div>
+<div class="card"><span>🏥</span><h3>Saúde</h3><p>Diagnóstico por imagem (deteta cancro), previsão de surtos, cirurgias robóticas, descoberta de novos medicamentos em semanas.</p></div>
+<div class="card"><span>🏭</span><h3>Indústria</h3><p>Robôs colaborativos, manutenção preditiva (máquina avisa antes de avariar), controle de qualidade com visão computacional.</p></div>
+<div class="card"><span>🌾</span><h3>Agricultura</h3><p>Drones analisam plantação, sensores de solo, previsão de colheita, detecção de pragas por celular. Aumenta produção em Moçambique em até 40%.</p></div>
+</div>
+</section>
+
+<section id="quizsec" style="display:none">
+<h2>🧠 Teste seus conhecimentos</h2>
+<div class="card" id="quiz"></div>
+</section>
+
+<footer>
+<p>Conteúdo educacional sobre Inteligência Artificial • 2026 • Feito para aprender e compartilhar conhecimento</p>
+<p id="dataFooter"></p>
+</footer>
+
+<script>
+function showSec(id){
+document.querySelectorAll('section').forEach(s=>s.style.display='none');
+document.getElementById(id).style.display='block';
+document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+event.target.classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+let ex=0;
+function trocarExemplo(){
+const textos=[
+"TRADICIONAL: Para reconhecer gato, programador escreve: SE tem bigode E orelhas pontudas E mia ENTÃO é gato. Se aparecer gato sem bigode, falha.",
+"MODERNA: Mostra 1 milhão de fotos de gatos para IA. Ela APRENDE sozinha o que é gato, mesmo gato sem bigode, preto, branco, dormindo. Não precisa de regras!"
+];
+document.getElementById('comparTexto').innerText=textos[ex];
+ex=(ex+1)%2;
+document.getElementById('comparTitle').innerText=ex==0?"Exemplo IA Tradicional:":"Exemplo IA Moderna:";
+}
+const perguntas=[
+{q:"Quando nasceu o termo Inteligência Artificial?",a:["1943","1956","1997","2022"],c:1},
+{q:"Qual é a diferença principal da IA moderna?",a:["Usa mais eletricidade","Aprende com dados","Só funciona offline","Foi feita por robôs"],c:1},
+{q:"IA na agricultura ajuda a?",a:["Só tirar fotos","Prever pragas e aumentar produção","Substituir chuva","Vender no mercado"],c:1}
+];
+let pi=0, pontos=0;
+function carregarQuiz(){
+if(pi>=perguntas.length){document.getElementById('quiz').innerHTML=`<h3>🎉 Fim! Acertaste ${pontos}/${perguntas.length}</h3><button onclick="pi=0;pontos=0;carregarQuiz()" style="margin-top:10px;padding:8px 15px;background:var(--ciano);border:none;border-radius:8px;cursor:pointer">Recomeçar</button>`;return;}
+let p=perguntas[pi];
+let html=`<h4>${pi+1}. ${p.q}</h4>`;
+p.a.forEach((op,i)=>{html+=`<button onclick="responder(${i})">${op}</button>`});
+document.getElementById('quiz').innerHTML=html;
+}
+function responder(i){
+if(i==perguntas[pi].c)pontos++;
+pi++;carregarQuiz();
+}
+carregarQuiz();
+document.getElementById('dataFooter').innerText="Atualizado em: "+new Date().toLocaleDateString('pt-MZ',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+</script>
+</body>
+  </html>
